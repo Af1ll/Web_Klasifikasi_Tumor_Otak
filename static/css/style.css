@@ -1,0 +1,248 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Umum */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Container Umum */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header and titles */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #2c3e50;
+}
+
+header p {
+    font-size: 18px;
+    color: #7f8c8d;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #e9f7fc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Result text */
+.result-text {
+    font-size: 18px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Uploaded image display */
+.uploaded-img {
+    max-width: 30%;  /* Memperkecil gambar menjadi 30% dari lebar kontainer */
+    margin: 20px auto; /* Menambahkan margin untuk memberi jarak */
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan pada gambar */
+}
+
+/* Actions section (buttons) */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Styling buttons */
+button, .secondary-btn {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.primary-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.primary-btn:hover {
+    background-color: #2980b9;
+}
+
+.secondary-btn {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.secondary-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Remove underline on links */
+a {
+    text-decoration: none;
+}
+
+/* About Tumor Section */
+.article {
+    background-color: #f7f9fc;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.article h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.article p {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+.article .secondary-btn {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.article .secondary-btn:hover {
+    background-color: #2980b9;
+}
+
+.journals li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.journals li:last-child {
+    border-bottom: none;
+}
+
+.journals img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px; /* Spasi antara gambar dan teks */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.journals .journal-content {
+    max-width: 800px;
+}
+
+.journals .journal-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.journals .journal-title a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+.journals .journal-title a:hover {
+    text-decoration: underline;
+}
+
+.journals .journal-description {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+
+.journals .secondary-btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.journals .secondary-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Styling untuk peringatan yang kecil dan sederhana */
+.warning-text {
+    font-size: 14px;  /* Ukuran font lebih kecil */
+    color: #e74c3c;  /* Warna teks merah */
+    font-style: italic;  /* Membuat teks miring */
+    margin-top: 10px;  /* Jarak atas sedikit */
+    text-align: center;  /* Meratakan teks di tengah */
+}
+
+/* Make the website responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-actions button, .form-actions a {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .uploaded-img {
+        max-width: 60%; /* Gambar bisa lebih besar di perangkat kecil */
+    }
+}
