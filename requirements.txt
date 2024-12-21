@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 streamlit==1.25.0
 tensorflow==2.14.0
 keras==2.14.0
 numpy==1.26.0
 Pillow==10.0.1
-=======
-streamlit==1.25.0
-tensorflow==2.14.0
-keras==2.14.0
-numpy==1.26.0
-Pillow==10.0.1
->>>>>>> 7b4ee900bf96fd26edc74a4d6c21b772ad621d37
