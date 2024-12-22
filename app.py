@@ -4,7 +4,7 @@ import tensorflow as tf
 from keras.models import load_model
 from tensorflow.keras.applications.efficientnet import preprocess_input
 import numpy as np
-import cv2
+from PIL import Image
 
 # Mapping kelas sesuai dengan model pelatihan
 CLASS_NAMES = ['glioma', 'meningioma', 'notumor', 'pituitary']
@@ -16,8 +16,9 @@ model = load_model(MODEL_PATH)
 def predict_label(img):
     """Predict the class of an image."""
     # Resize and preprocess the image
-    img = cv2.resize(img, (224, 224))
-    img_array = preprocess_input(img)
+    img = img.resize((224, 224))  # Resize using Pillow
+    img_array = np.array(img)  # Convert to NumPy array
+    img_array = preprocess_input(img_array)
     img_array = np.expand_dims(img_array, axis=0)
 
     # Predict using the model
@@ -48,15 +49,11 @@ st.title("Klasifikasi Tumor Otak dengan AI")
 uploaded_file = st.file_uploader("Upload Gambar MRI Anda", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
-    # Read the image using OpenCV
-    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-    img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
-
-    # Convert BGR to RGB for visualization
-    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    # Read the image using Pillow
+    img = Image.open(uploaded_file).convert("RGB")
 
     # Display the uploaded image
-    st.image(img_rgb, caption="Gambar yang Diunggah", use_column_width=True)
+    st.image(img, caption="Gambar yang Diunggah", use_column_width=True)
 
     # Predict Button
     if st.button("Prediksi"):
